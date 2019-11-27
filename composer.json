@@ -38,11 +38,13 @@
   },
   "require": {
     "php": "^7.1",
+    "ext-json": "*",
     "rollun-com/rollun-callback": "^5.0",
     "rollun-com/rollun-datastore": "^6",
     "rollun-com/rollun-logger": "^4.2",
     "rollun-com/rollun-permission": "^4.0.3",
     "symfony/dotenv": "^4.2",
+    "symfony/expression-language": "^5.0",
     "zendframework/zend-component-installer": "^2.1.1",
     "zendframework/zend-config-aggregator": "^1.0",
     "zendframework/zend-diactoros": "^1.7.1 || ^2.0",
@@ -50,8 +52,7 @@
     "zendframework/zend-expressive-fastroute": "^3.0",
     "zendframework/zend-expressive-helpers": "^5.0",
     "zendframework/zend-servicemanager": "^3.3",
-    "zendframework/zend-stdlib": "^3.1",
-    "ext-json": "*"
+    "zendframework/zend-stdlib": "^3.1"
   },
   "require-dev": {
     "phpunit/phpunit": "^7.0.1",
