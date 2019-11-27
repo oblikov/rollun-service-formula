@@ -4,9 +4,11 @@
  * @license LICENSE.md New BSD License
  */
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace App;
+
+use rollun\callback\Middleware\CallablePluginManagerFactory;
 
 /**
  * The configuration provider for the App module
@@ -26,6 +28,12 @@ class ConfigProvider
     {
         return [
             'dependencies' => $this->getDependencies(),
+            CallablePluginManagerFactory::KEY_INTERRUPTERS => [
+                'invokables' => [Handler\ExpressionHandler::class => Handler\ExpressionHandler::class],
+                'aliases' => [
+                    'formula' => Handler\ExpressionHandler::class,
+                ]
+            ]
         ];
     }
 
@@ -37,7 +45,11 @@ class ConfigProvider
         return [
             'invokables' => [
                 Handler\HomePageHandler::class => Handler\HomePageHandler::class,
+                Handler\ExpressionHandler::class => Handler\ExpressionHandler::class,
             ],
+            'aliases' => [
+                'formula' => Handler\ExpressionHandler::class,
+            ]
         ];
     }
 }

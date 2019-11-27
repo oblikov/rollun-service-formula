@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @copyright Copyright © 2014 Rollun LC (http://rollun.com/)
  * @license LICENSE.md New BSD License
@@ -12,14 +13,14 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 use Zend\Diactoros\Response\HtmlResponse;
+use Zend\Diactoros\Response\JsonResponse;
 
-class HomePageHandler implements RequestHandlerInterface
+class ExpressionHandler
 {
-    public function handle(ServerRequestInterface $request) : ResponseInterface
-    {
 
-        phpinfo();
-        $a = $request->getQueryParams();
-        return new HtmlResponse('Home page!');
+    public function __invoke()
+    {
+        return new JsonResponse('+++');
     }
 }
+
