@@ -1,7 +1,7 @@
 
 # rollun-service-formulas
 
-`rollun-service-formulas` - REST Микросервис для вычисления и валидации фомул.
+`rollun-service-formulas` - REST Микросервис для вычисления и валидации формул.
 Формула для вычисление ожидается в поле expression.
 Результат возвращается в payload
 ##Примеры
