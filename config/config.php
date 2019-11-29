@@ -25,6 +25,11 @@ if(file_exists('.env')) {
 $appEnv = getenv('APP_ENV');
 
 $aggregator = new ConfigAggregator([
+    \rollun\datahandler\Processor\ConfigProvider::class,
+    \rollun\datahandler\Validator\ConfigProvider::class,
+    \rollun\datahandler\Filter\ConfigProvider::class,
+    \rollun\datahandler\Evaluator\ConfigProvider::class,
+    \Zend\Filter\ConfigProvider::class,
     \Zend\Expressive\Authentication\Basic\ConfigProvider::class,
     \Zend\Expressive\Authentication\Session\ConfigProvider::class,
     \Zend\Expressive\Authentication\ConfigProvider::class,
