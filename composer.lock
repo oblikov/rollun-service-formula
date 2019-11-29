@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d240a0a0b3d361f14c64fb1b3a86c1e2",
+    "content-hash": "65e45c99d66505813500e55c369230ee",
     "packages": [
         {
             "name": "apache/thrift",
