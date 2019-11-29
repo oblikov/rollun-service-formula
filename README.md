@@ -92,3 +92,18 @@ curl 'http://formula.local/api/webhook/formula' -X POST -H 'content-type: applic
   //......
 }
 ```
+
+###Filters
+curl 'http://formula.local/api/webhook/formula' -X POST -H 'content-type: application/json' --data-binary '{"expression": "stringTrim(\" 1   \")"}'
+Response 
+```json5
+{
+  //.....
+	"payload": {
+        "result": 1,
+        "valid": true,
+        "error": null
+      },
+  //......
+}
+```

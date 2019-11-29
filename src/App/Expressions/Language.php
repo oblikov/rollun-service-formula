@@ -20,6 +20,7 @@ class Language
         foreach (Functions::getAll() as $name => $callback) {
             $expressionLanguage->addFunction(new Callback($callback, $name));
         }
+        $expressionLanguage->registerProvider(Filters::getAll());
         return $expressionLanguage->evaluate($formula);
     }
 }
