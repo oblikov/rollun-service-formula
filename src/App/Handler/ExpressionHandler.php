@@ -9,9 +9,9 @@ declare(strict_types=1);
 
 namespace App\Handler;
 
+use App\Expressions\Language;
 use RuntimeException;
 use Zend\Http\PhpEnvironment\Request;
-use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
 use Symfony\Component\ExpressionLanguage\SyntaxError;
 use Zend\Diactoros\Response\JsonResponse;
 
@@ -26,12 +26,10 @@ class ExpressionHandler
             throw new RuntimeException('Field expression is mandatory.');
         }
         try {
-            $expression = new ExpressionLanguage();
-            $result = $expression->evaluate($params->expression);
+            $result = Language::resolve($params->expression);
             return new JsonResponse(['result' => $result, 'valid' => true, 'error' => null]);
         } catch (SyntaxError $e) {
             return new JsonResponse(['result' => null, 'valid' => false, 'error' => $e->getMessage()]);
         }
     }
 }
-

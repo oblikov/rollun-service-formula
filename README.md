@@ -5,12 +5,12 @@
 Формула для вычисление ожидается в поле expression.
 Результат возвращается в payload
 ##Примеры
-
+###Формулы
 **простая формула**
 
 Запрос
 ```bash
-curl 'http://rollun.local/api/webhook/formula' -X POST -H 'content-type: application/json' --data-binary '{"expression": "1 + 2"}'
+curl 'http://formula.local/api/webhook/formula' -X POST -H 'content-type: application/json' --data-binary '{"expression": "1 + 2"}'
 ```
 Ответ 
 ```json5
@@ -27,7 +27,7 @@ curl 'http://rollun.local/api/webhook/formula' -X POST -H 'content-type: applica
 
 **сложнее**
 ```bash
-curl 'http://rollun.local/api/webhook/formula' -X POST -H 'content-type: application/json' --data-binary '{"expression": "1 + 2 - (1 - 2 * -1.2 + (1)) / 1 ? 3 : 4"}'
+curl 'http://formula.local/api/webhook/formula' -X POST -H 'content-type: application/json' --data-binary '{"expression": "1 + 2 - (1 - 2 * -1.2 + (1)) / 1 ? 3 : 4"}'
 ```
 ```json5
 {
@@ -42,7 +42,7 @@ curl 'http://rollun.local/api/webhook/formula' -X POST -H 'content-type: applica
 ```
 **невалидное выражение**
 ```bash
-curl 'http://rollun.local/api/webhook/formula' -X POST -H 'content-type: application/json' --data-binary '{"expression": "1 + 2 - (1 - 2 - * 1.2 + (1))  1 ? 3 : 4"}'
+curl 'http://formula.local/api/webhook/formula' -X POST -H 'content-type: application/json' --data-binary '{"expression": "1 + 2 - (1 - 2 - * 1.2 + (1))  1 ? 3 : 4"}'
 ```
 ```json5
 {
@@ -53,6 +53,27 @@ curl 'http://rollun.local/api/webhook/formula' -X POST -H 'content-type: applica
         "error": "Unexpected token \"operator\" of value \"*\" around position 18 for expression `1 + 2 - (1 - 2 - * 1.2 + (1))  1 ? 3 : 4`."
       },
 
+  //......
+}
+```
+
+###Вызов функций
+
+**простая формула**
+
+Запрос
+```bash
+curl 'http://formula.local/api/webhook/formula' -X POST -H 'content-type: application/json' --data-binary '{"expression": "ping(1)"}'
+```
+Ответ 
+```json5
+{
+  //.....
+	"payload": {
+        "result": "pong",
+        "valid": true,
+        "error": null
+      },
   //......
 }
 ```

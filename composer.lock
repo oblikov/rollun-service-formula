@@ -2518,7 +2518,7 @@
             "source": {
                 "type": "git",
                 "url": "/home/andrew/work/rollun-datahandler",
-                "reference": "aad3b6f4ee645c695859adf1ac811901d7586670"
+                "reference": "31e899cfd47cbd10bc7da11ea1cae21633a22bce"
             },
             "require": {
                 "ext-json": "*",
@@ -2592,7 +2592,7 @@
             },
             "description": "Rollun zend-expressive skeleton. Begin developing applications in seconds!",
             "homepage": "https://github.com/rollun/rollun-datahandler",
-            "time": "2019-11-29T12:12:36+00:00"
+            "time": "2019-11-29T15:04:08+00:00"
         },
         {
             "name": "rollun-com/rollun-datastore",
