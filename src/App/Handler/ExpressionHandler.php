@@ -21,7 +21,7 @@ class ExpressionHandler
     public function __invoke(): JsonResponse
     {
         $request = new Request();
-        $params = json_decode($request->getContent(), false, 512, JSON_THROW_ON_ERROR);
+        $params = json_decode($request->getContent());
         if (empty($params->expression)) {
             throw new RuntimeException('Field expression is mandatory.');
         }

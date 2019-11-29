@@ -37,7 +37,7 @@
     "forum": "https://discourse.zendframework.com/c/questions/expressive"
   },
   "require": {
-    "php": "^7.3",
+    "php": "^7.1",
     "ext-json": "*",
     "rollun-com/rollun-callback": "^5.0",
     "rollun-com/rollun-datastore": "^6",
