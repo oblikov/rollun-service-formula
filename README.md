@@ -59,8 +59,6 @@ curl 'http://formula.local/api/webhook/formula' -X POST -H 'content-type: applic
 
 ###Вызов функций
 
-**простая формула**
-
 Запрос
 ```bash
 curl 'http://formula.local/api/webhook/formula' -X POST -H 'content-type: application/json' --data-binary '{"expression": "ping(1)"}'
@@ -71,6 +69,23 @@ curl 'http://formula.local/api/webhook/formula' -X POST -H 'content-type: applic
   //.....
 	"payload": {
         "result": "pong",
+        "valid": true,
+        "error": null
+      },
+  //......
+}
+```
+
+Запрос
+```bash
+curl 'http://formula.local/api/webhook/formula' -X POST -H 'content-type: application/json' --data-binary '{"expression": "echo(1)"}'
+```
+Ответ 
+```json5
+{
+  //.....
+	"payload": {
+        "result": 1,
         "valid": true,
         "error": null
       },

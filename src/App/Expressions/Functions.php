@@ -11,11 +11,11 @@ class Functions
     public static function getAll(): array
     {
         return [
-            'ping' => new SerializedCallback(static function () {
+            'ping' => new SerializedCallback(static function ($a) {
                 return 'pong';
             }),
-            'concat' => new SerializedCallback(static function ($a, $b) {
-                return $a . $b;
+            'echo' => new SerializedCallback(static function ($a) {
+                return $a;
             })
         ];
     }
